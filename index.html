@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammed Riyas M N | Aspiring Data Analyst</title>
+  <meta name="description" content="Portfolio of Muhammed Riyas M N, an aspiring Data Analyst building practical projects using Python, SQL, Power BI, MS Excel, and data processing.">
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            slate: {
+              850: '#111827',
+              900: '#0B0F19',
+              950: '#070A10',
+            },
+            accent: {
+              blue: '#38BDF8',
+              emerald: '#10B981',
+              darkblue: '#1E3A8A',
+            }
+          },
+          animation: {
+            'pulse-subtle': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'blink': 'blink 1.2s infinite',
+          },
+          keyframes: {
+            blink: {
+              '0%, 100%': { opacity: '1' },
+              '50%': { opacity: '0' },
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Custom subtle background grid pattern */
+    .bg-grid-pattern {
+      background-image: linear-gradient(to right, rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+    
+    /* Code styling & scrollbar aesthetics */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0B0F19;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1F2937;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #374151;
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500/20 selection:text-cyan-300 min-h-screen flex flex-col overflow-x-hidden">
+
+  <!-- ============================================================ -->
+  <!-- NAVIGATION BAR                                               -->
+  <!-- ============================================================ -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/85 border-b border-slate-800/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- Brand Logo / Name -->
+        <a href="#home" class="flex items-center space-x-3 group focus:outline-none focus:ring-2 focus:ring-sky-500 rounded-lg p-1">
+          <div class="w-9 h-9 rounded-md bg-gradient-to-br from-sky-500/20 to-emerald-500/20 border border-sky-500/30 flex items-center justify-center text-sky-400 font-mono text-sm font-bold group-hover:border-sky-400/60 transition-colors">
+            &gt;_
+          </div>
+          <div>
+            <span class="text-sm font-semibold tracking-wide text-white group-hover:text-sky-300 transition-colors">Muhammed Riyas M N</span>
+            <span class="hidden sm:inline-block text-xs text-sky-400 font-mono ml-2 border-l border-slate-700 pl-2">Aspiring Data Analyst</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-2" aria-label="Main Navigation">
+          <a href="#home" class="px-3 py-1.5 text-xs lg:text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-md transition-colors">Home</a>
+          <a href="#about" class="px-3 py-1.5 text-xs lg:text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-md transition-colors">About</a>
+          <a href="#projects" class="px-3 py-1.5 text-xs lg:text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-md transition-colors">Projects</a>
+          <a href="#skills" class="px-3 py-1.5 text-xs lg:text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-md transition-colors">Skills</a>
+          <a href="#journey" class="px-3 py-1.5 text-xs lg:text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-md transition-colors">Journey</a>
+          <a href="#contact" class="px-3 py-1.5 text-xs lg:text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-md transition-colors">Contact</a>
+        </nav>
+
+        <!-- Header Actions: Socials & Quick Connect -->
+        <div class="hidden md:flex items-center space-x-3">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/muhammed-riyas-m-n" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-sky-400 p-2 rounded-md hover:bg-slate-900 transition-colors" title="LinkedIn Profile" aria-label="LinkedIn Profile">
+            <i class="fa-brands fa-linkedin text-lg"></i>
+          </a>
+          <!-- GitHub Profile -->
+          <a href="https://github.com/Riyas-m-n" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white p-2 rounded-md hover:bg-slate-900 transition-colors" title="GitHub Profile" aria-label="GitHub Profile">
+            <i class="fa-brands fa-github text-lg"></i>
+          </a>
+          <!-- Direct Email Button -->
+          <a href="mailto:muhammedriyas.m.n.18@gmail.com" class="inline-flex items-center space-x-2 text-xs font-semibold px-3 py-1.5 rounded-md bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 border border-sky-500/30 hover:border-sky-500/50 transition-all">
+            <i class="fa-regular fa-envelope"></i>
+            <span>Email Me</span>
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <div class="flex md:hidden items-center">
+          <button id="mobile-menu-btn" type="button" class="p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500" aria-label="Toggle menu" aria-expanded="false">
+            <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950/95 px-4 pt-3 pb-5 space-y-2">
+      <a href="#home" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-md">Home</a>
+      <a href="#about" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-md">About</a>
+      <a href="#projects" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-md">Projects</a>
+      <a href="#skills" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-md">Skills</a>
+      <a href="#journey" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-md">Journey</a>
+      <a href="#contact" class="mobile-nav-link block px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900 rounded-md">Contact</a>
+      <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+          <a href="https://www.linkedin.com/in/muhammed-riyas-m-n" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-sky-400" aria-label="LinkedIn Profile">
+            <i class="fa-brands fa-linkedin text-xl"></i>
+          </a>
+          <a href="https://github.com/Riyas-m-n" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white" aria-label="GitHub Profile">
+            <i class="fa-brands fa-github text-xl"></i>
+          </a>
+        </div>
+        <a href="mailto:muhammedriyas.m.n.18@gmail.com" class="text-xs text-sky-400 font-mono font-medium hover:underline">
+          muhammedriyas.m.n.18@gmail.com
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- HERO SECTION                                                 -->
+  <!-- ============================================================ -->
+  <section id="home" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-grid-pattern border-b border-slate-900">
+    <!-- Subtle Background Glow Elements -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sky-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/3 right-10 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Left Column: Identity & Positioning -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Status Pill -->
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-xs font-mono text-slate-300">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Focus: Data Analytics &amp; Practical Projects</span>
+          </div>
+
+          <!-- Name & Primary Titles -->
+          <div class="space-y-2">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white uppercase">
+              MUHAMMED RIYAS M N
+            </h1>
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-300 to-emerald-400">
+              Aspiring Data Analyst
+            </h2>
+            <p class="text-xs sm:text-sm font-mono text-slate-400 font-medium tracking-wide">
+              Python <span class="text-sky-400">&bull;</span> SQL <span class="text-sky-400">&bull;</span> Power BI <span class="text-sky-400">&bull;</span> MS Excel
+            </p>
+          </div>
+
+          <!-- Central Supporting Narrative -->
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+            Currently pursuing a Professional Certification in Data Analytics with Prompt Engineering while building practical skills through data analytics and Python projects.
+          </p>
+
+          <!-- Contact & Education Quick Badges -->
+          <div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-mono text-slate-400 pt-1">
+            <span class="inline-flex items-center space-x-1.5">
+              <i class="fa-solid fa-location-dot text-sky-400"></i>
+              <span>Kochi, Kerala, India</span>
+            </span>
+            <span class="inline-flex items-center space-x-1.5">
+              <i class="fa-solid fa-phone text-emerald-400"></i>
+              <a href="tel:+918086402616" class="hover:text-white transition-colors">+91 8086402616</a>
+            </span>
+            <span class="inline-flex items-center space-x-1.5">
+              <i class="fa-solid fa-graduation-cap text-indigo-400"></i>
+              <span>B.Com Computer Application ('26)</span>
+            </span>
+            <span class="inline-flex items-center space-x-1.5">
+              <i class="fa-solid fa-medal text-amber-400"></i>
+              <span>NCC 'C' Certificate Holder</span>
+            </span>
+          </div>
+
+          <!-- Action Buttons & Socials -->
+          <div class="pt-2 flex flex-wrap items-center gap-4">
+            <a href="#projects" class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-sm font-semibold shadow-lg shadow-sky-600/20 hover:shadow-sky-500/30 transition-all focus:ring-2 focus:ring-sky-400">
+              <span>View Projects</span>
+              <i class="fa-solid fa-arrow-down text-xs"></i>
+            </a>
+            <a href="Muhammed_Riyas_M_N_Data_Analyst_CV.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 hover:border-slate-700 text-sm font-medium transition-all group">
+              <i class="fa-regular fa-file-pdf text-xs text-emerald-400"></i>
+              <span>View Resume</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500 group-hover:text-slate-300 transition-colors"></i>
+            </a>
+            <a href="#contact" class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 hover:border-slate-700 text-sm font-medium transition-all">
+              <span>Contact Me</span>
+              <i class="fa-regular fa-paper-plane text-xs text-slate-400"></i>
+            </a>
+          </div>
+
+          <!-- Social Verification Links -->
+          <div class="pt-2 flex items-center space-x-6 text-sm text-slate-400">
+            <a href="https://www.linkedin.com/in/muhammed-riyas-m-n" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 hover:text-sky-400 transition-colors">
+              <i class="fa-brands fa-linkedin text-sky-400"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/Riyas-m-n" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 hover:text-white transition-colors" title="GitHub Profile">
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="mailto:muhammedriyas.m.n.18@gmail.com" class="inline-flex items-center space-x-2 hover:text-emerald-400 transition-colors">
+              <i class="fa-regular fa-envelope text-emerald-400"></i>
+              <span>Email</span>
+            </a>
+            <a href="tel:+918086402616" class="inline-flex items-center space-x-2 hover:text-white transition-colors">
+              <i class="fa-solid fa-phone text-slate-400"></i>
+              <span>Call</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Hero Right Column: Interactive Terminal Panel -->
+        <div class="lg:col-span-5">
+          <div class="rounded-xl bg-slate-900/90 border border-slate-800 shadow-2xl shadow-black/50 overflow-hidden font-mono text-xs">
+            
+            <!-- Terminal Title Bar -->
+            <div class="px-4 py-3 bg-slate-950/80 border-b border-slate-800 flex items-center justify-between select-none">
+              <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+              </div>
+              <span class="text-slate-400 text-[11px] font-medium tracking-wide">profile.py — bash</span>
+              <span class="text-slate-600 text-[11px]">utf-8</span>
+            </div>
+
+            <!-- Terminal Output Body -->
+            <div class="p-5 space-y-3 text-slate-300 leading-relaxed overflow-x-auto">
+              <div class="flex items-center space-x-2">
+                <span class="text-sky-400 font-bold">$</span>
+                <span class="text-emerald-400 font-medium">python</span>
+                <span class="text-slate-200">profile.py</span>
+              </div>
+
+              <div class="text-slate-400 pt-1">
+                Initializing analytics environment...
+              </div>
+
+              <div class="space-y-1 pl-1">
+                <div class="flex items-center space-x-2 text-slate-300">
+                  <span class="text-emerald-400 font-bold">[OK]</span>
+                  <span>Python &amp; SQL</span>
+                </div>
+                <div class="flex items-center space-x-2 text-slate-300">
+                  <span class="text-emerald-400 font-bold">[OK]</span>
+                  <span>Power BI &amp; MS Excel</span>
+                </div>
+                <div class="flex items-center space-x-2 text-slate-300">
+                  <span class="text-emerald-400 font-bold">[OK]</span>
+                  <span>Pandas &amp; OpenPyXL</span>
+                </div>
+                <div class="flex items-center space-x-2 text-slate-300">
+                  <span class="text-emerald-400 font-bold">[OK]</span>
+                  <span>Web Scraping &amp; Automation</span>
+                </div>
+              </div>
+
+              <div class="border-t border-slate-800 pt-2 text-[11px] space-y-1 text-slate-400">
+                <div class="text-xs uppercase tracking-wider font-semibold text-slate-500">SYSTEM PROFILE</div>
+                <div class="flex justify-between">
+                  <span>Target Role:</span>
+                  <span class="text-sky-400 font-medium">Aspiring Data Analyst</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Training:</span>
+                  <span class="text-slate-300">SMEC Technologies</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Education:</span>
+                  <span class="text-slate-300">B.Com Comp. App ('26)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Status:</span>
+                  <span class="text-emerald-400 font-semibold">Available for Roles</span>
+                </div>
+              </div>
+
+              <div class="pt-2 flex items-center space-x-1.5 text-slate-400">
+                <span class="text-sky-400">&gt;</span>
+                <span class="text-slate-300">ready</span>
+                <span class="inline-block w-2 h-4 bg-sky-400 animate-blink"></span>
+              </div>
+            </div>
+
+          </div>
+          <p class="text-center text-[11px] text-slate-500 font-mono mt-2">
+            Terminal status: practical analytics &amp; automation environment
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ABOUT ME SECTION                                             -->
+  <!-- ============================================================ -->
+  <section id="about" class="py-16 md:py-24 border-b border-slate-900 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="space-y-2 mb-12">
+        <div class="inline-flex items-center space-x-2 text-xs font-mono text-sky-400 tracking-wider uppercase">
+          <i class="fa-solid fa-terminal text-[10px]"></i>
+          <span>Background &amp; Approach</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          ABOUT ME
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Narrative Paragraphs -->
+        <div class="lg:col-span-7 space-y-5 text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p>
+            I am an <strong class="text-white font-medium">Aspiring Data Analyst</strong> with an educational background in <strong class="text-sky-300 font-medium">B.Com Computer Application</strong> from Al-Ameen College, Edathala (2026). I am currently pursuing a <strong class="text-white font-medium">Professional Certification in Data Analytics with Prompt Engineering</strong> at SMEC Technologies to deepen my applied analytical capabilities.
+          </p>
+          <p>
+            My core focus is on developing practical skills across <strong class="text-sky-300 font-medium">Python</strong>, <strong class="text-sky-300 font-medium">SQL</strong>, <strong class="text-sky-300 font-medium">MS Excel</strong>, <strong class="text-sky-300 font-medium">Power BI</strong>, and <strong class="text-emerald-300 font-medium">Pandas</strong> for structured data processing, cleaning, and reporting. Rather than studying tools in isolation, I learn by building practical projects—including automated web data extraction pipelines, structured Excel databases, and interactive analytical dashboards.
+          </p>
+          <p>
+            Python automation and modular software development serve as my supporting strengths, enabling me to build repeatable data workflows that eliminate manual bottlenecks and safeguard data integrity. I am driven by transforming raw data into useful insights, structured information, and practical solutions.
+          </p>
+          
+          <!-- Central Motto Callout -->
+          <div class="p-4 rounded-lg bg-slate-900/80 border-l-4 border-sky-500 border-r border-t border-b border-slate-800 text-slate-200 text-sm font-mono">
+            <span class="text-sky-400 font-bold">&gt;</span> Focused on practical Data Analytics, automated data processing, and continuous technical growth.
+          </div>
+        </div>
+
+        <!-- Quick Facts / Practical Competencies Cards -->
+        <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 font-mono text-xs">
+          
+          <div class="p-4 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-colors">
+            <div class="text-sky-400 font-semibold flex items-center space-x-2 mb-1">
+              <i class="fa-solid fa-chart-pie"></i>
+              <span>Data Analytics &amp; BI</span>
+            </div>
+            <p class="text-slate-400 font-sans text-xs leading-relaxed">
+              Transforming raw datasets into structured Power BI dashboards, SQL querying, and automated Excel reporting models.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-colors">
+            <div class="text-emerald-400 font-semibold flex items-center space-x-2 mb-1">
+              <i class="fa-brands fa-python"></i>
+              <span>Python &amp; Data Processing</span>
+            </div>
+            <p class="text-slate-400 font-sans text-xs leading-relaxed">
+              Writing clean, modular Python scripts utilizing Pandas, Requests, and BeautifulSoup for robust ETL and data transformation.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-colors">
+            <div class="text-indigo-400 font-semibold flex items-center space-x-2 mb-1">
+              <i class="fa-solid fa-gears"></i>
+              <span>Workflow &amp; Automation</span>
+            </div>
+            <p class="text-slate-400 font-sans text-xs leading-relaxed">
+              Automating spreadsheet creation with OpenPyXL, scheduled data collection pipelines, and supporting system utilities.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- EDUCATION & TRAINING SECTION                                 -->
+  <!-- ============================================================ -->
+  <section id="education" class="py-16 md:py-24 border-b border-slate-900 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="space-y-2 mb-12">
+        <div class="inline-flex items-center space-x-2 text-xs font-mono text-sky-400 tracking-wider uppercase">
+          <i class="fa-solid fa-graduation-cap text-[10px]"></i>
+          <span>Education &amp; Training</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          EDUCATION &amp; CERTIFICATIONS
+        </h2>
+        <p class="text-slate-400 text-sm max-w-2xl">
+          Academic foundation and ongoing professional training in data analytics, database querying, and business intelligence.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Column 1: Ongoing Professional Certification -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="p-6 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-all space-y-4 shadow-xl">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-slate-800/80 pb-4">
+              <div>
+                <span class="text-xs font-mono text-sky-400 font-semibold uppercase tracking-wide">Professional Certification</span>
+                <h3 class="text-lg font-bold text-white mt-0.5">Professional Certification in Data Analytics with Prompt Engineering</h3>
+                <p class="text-sm font-semibold text-slate-300 mt-1">SMEC Technologies</p>
+              </div>
+              <div class="text-left sm:text-right">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/30 inline-block">
+                  June 2026 &ndash; Present
+                </span>
+                <p class="text-xs font-mono text-emerald-400 font-medium mt-1">Currently pursuing</p>
+              </div>
+            </div>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Comprehensive professional training focused on foundational and applied Data Analytics competencies—including relational database querying with SQL, Python data transformation with Pandas, programmatic Excel workbook modeling with OpenPyXL, and interactive dashboard reporting in Power BI.
+            </p>
+
+            <div class="space-y-2 pt-1">
+              <div class="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold">Core Curriculum &amp; Practical Focus:</div>
+              <ul class="space-y-1.5 text-xs text-slate-300">
+                <li class="flex items-start space-x-2">
+                  <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
+                  <span>SQL querying for database filtering, table aggregations, and relational data extraction</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
+                  <span>Data cleaning, validation, and tabular transformations using Python and Pandas</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
+                  <span>Automated spreadsheet generation, formula management, and formatting via OpenPyXL</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i class="fa-solid fa-check text-sky-400 mt-0.5"></i>
+                  <span>Business intelligence reporting, visual data modeling, and KPI dashboard design in Power BI</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Degree & Achievement -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- Degree Card -->
+          <div class="p-6 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-all space-y-2 shadow-xl">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-sky-400 font-semibold uppercase">Undergraduate Degree</span>
+              <span class="text-xs font-mono text-slate-400">Class of 2026</span>
+            </div>
+            <h3 class="text-base font-bold text-white">B.Com Computer Application</h3>
+            <p class="text-sm text-slate-300 font-medium">Al-Ameen College, Edathala</p>
+            <p class="text-xs text-slate-400 font-sans leading-relaxed pt-1">
+              Academic foundation combining commerce, business accounting, and commercial mathematics with computerized software applications and database fundamentals.
+            </p>
+          </div>
+
+          <!-- Achievement Card -->
+          <div class="p-6 rounded-xl bg-slate-900/80 border border-amber-500/30 hover:border-amber-500/50 transition-all space-y-2 relative overflow-hidden shadow-xl">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-amber-400 font-semibold uppercase flex items-center space-x-1.5">
+                <i class="fa-solid fa-medal text-xs"></i>
+                <span>Achievement</span>
+              </span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-500/10 text-amber-300 border border-amber-500/30">Certified</span>
+            </div>
+            <h3 class="text-base font-bold text-white">NCC 'C' Certificate Holder</h3>
+            <p class="text-sm text-slate-300 font-medium">National Cadet Corps (NCC)</p>
+            <p class="text-xs text-slate-400 font-sans leading-relaxed pt-1">
+              Demonstrates high discipline, leadership, teamwork, adaptability, and operational dedication developed through rigorous national cadet training.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PROJECTS SECTION                                             -->
+  <!-- ============================================================ -->
+  <section id="projects" class="py-16 md:py-24 border-b border-slate-900 bg-slate-950 bg-grid-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="space-y-2 mb-12">
+        <div class="inline-flex items-center space-x-2 text-xs font-mono text-emerald-400 tracking-wider uppercase">
+          <i class="fa-solid fa-folder-open text-[10px]"></i>
+          <span>Inspected Codebase Portfolio</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          PRACTICAL PROJECTS
+        </h2>
+        <p class="text-slate-400 text-sm max-w-2xl">
+          Real, inspectable projects demonstrating applied Python programming, web data extraction, structured Excel reporting, and automation.
+        </p>
+      </div>
+
+      <!-- ======================================================== -->
+      <!-- PROJECT 1: FEATURED CARD (Infopark Job Web Scraper)      -->
+      <!-- ======================================================== -->
+      <div class="mb-12 rounded-xl bg-slate-900/80 border border-slate-800 p-6 lg:p-8 hover:border-slate-700/80 transition-all shadow-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Project 1 Left Column: Details -->
+          <div class="lg:col-span-7 space-y-5">
+            
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                COMPLETED / VERIFIED
+              </span>
+              <span class="text-xs font-mono text-slate-400">
+                Featured Data Pipeline
+              </span>
+            </div>
+
+            <div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Infopark Job Web Scraper
+              </h3>
+              <p class="text-xs font-mono text-sky-400 mt-1">
+                Python &bull; Requests &bull; BeautifulSoup &bull; Pandas &bull; OpenPyXL
+              </p>
+            </div>
+
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              An automated web scraping and ETL data collection pipeline engineered in Python to extract, sanitize, and structure technical employment listings from the live Infopark Kerala web portal. It navigates multi-page table layouts, implements polite request rate-limiting to prevent server blocking, cleans and deduplicates job records using Pandas, and programmatically generates formatted, analyst-ready Excel datasets with OpenPyXL.
+            </p>
+
+            <!-- Verified Features from Source Code -->
+            <div class="space-y-2">
+              <h4 class="text-xs uppercase tracking-wider font-mono font-semibold text-slate-400">
+                Implemented Source Features:
+              </h4>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
+                <li class="flex items-start space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                  <span><strong>Multi-Page Scraping:</strong> Automatic pagination handling up to collection targets</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                  <span><strong>Rate-Aware Crawling:</strong> Randomized request intervals (1.5s–3.0s)</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                  <span><strong>Data Extraction:</strong> Company, Job Title, Posted Date, Deadline, URL</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                  <span><strong>Two-Tier Deduplication:</strong> In-memory URL set and Pandas deduplication</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                  <span><strong>OpenPyXL Formatting:</strong> Header styling, cell borders, and freeze panes (A2)</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                  <span><strong>Spreadsheet Features:</strong> Dynamic hyperlinks and table auto-filter</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                  <span><strong>Defensive Scripting:</strong> HTTP error catching and file-lock protection</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                  <span><strong>Structured Dataset:</strong> Clean primary key indexing (Job ID)</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Tech Pills & GitHub link -->
+            <div class="pt-2 flex flex-wrap items-center gap-2">
+              <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 font-mono text-xs border border-slate-700">[ Python ]</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 font-mono text-xs border border-slate-700">[ Requests ]</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 font-mono text-xs border border-slate-700">[ BeautifulSoup ]</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 font-mono text-xs border border-slate-700">[ Pandas ]</span>
+              <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 font-mono text-xs border border-slate-700">[ OpenPyXL ]</span>
+              
+              <a href="https://github.com/Riyas-m-n/p1-infopark-job-web-scraper" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 ml-auto text-xs font-mono text-slate-400 hover:text-white px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors">
+                <i class="fa-brands fa-github text-sm"></i>
+                <span>View on GitHub</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Project 1 Right Column: Realistic Terminal Visual -->
+          <div class="lg:col-span-5">
+            <div class="rounded-lg bg-slate-950 border border-slate-800 overflow-hidden font-mono text-xs shadow-lg">
+              
+              <div class="px-4 py-2 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between">
+                <span class="text-slate-400 text-[11px]">p1.webscrapping.py</span>
+                <span class="text-emerald-400 text-[11px]">running</span>
+              </div>
+
+              <div class="p-4 space-y-2 text-slate-300 leading-normal overflow-x-auto">
+                <div class="text-slate-400">
+                  <span class="text-sky-400">$</span> python p1.webscrapping.py
+                </div>
+                <div class="text-slate-500">
+                  ============================================================<br>
+                  INFOPARK JOB SCRAPER &bull; ETL PIPELINE<br>
+                  ============================================================
+                </div>
+                <div class="text-slate-300 space-y-0.5 pl-1">
+                  <div>Scraping Page 1... <span class="text-emerald-400">[200 OK]</span> &bull; Valid: 25</div>
+                  <div>Scraping Page 2... <span class="text-emerald-400">[200 OK]</span> &bull; Valid: 25</div>
+                  <div>Scraping Page 3... <span class="text-emerald-400">[200 OK]</span> &bull; Valid: 25</div>
+                  <div class="text-slate-500 text-[11px]">Throttling requests (1.5s–3.0s delay)...</div>
+                </div>
+                <div class="pt-1 text-sky-300">
+                  Total unique jobs collected: <span class="text-white font-bold">200</span>
+                </div>
+                <div class="text-emerald-400 font-semibold">
+                  &bull; Excel file created successfully
+                </div>
+                <div class="text-[11px] text-slate-500 pt-1 border-t border-slate-800/80">
+                  Sheet: Raw_Data | Auto-filter &amp; freeze panes applied
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Secondary Projects Grid (2-Column Desktop, 1-Column Mobile) -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- ======================================================== -->
+        <!-- PROJECT 2: LIBRARY MANAGEMENT SYSTEM                     -->
+        <!-- ======================================================== -->
+        <div class="rounded-xl bg-slate-900/80 border border-slate-800 p-6 hover:border-slate-700/80 transition-all flex flex-col justify-between shadow-xl">
+          <div class="space-y-4">
+            
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                COMPLETED / VERIFIED
+              </span>
+              <span class="text-xs font-mono text-slate-400">Inventory Management</span>
+            </div>
+
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight">
+                Library Management System
+              </h3>
+              <p class="text-xs font-mono text-sky-400 mt-1">
+                Python &bull; OOP &bull; OpenPyXL &bull; Excel
+              </p>
+            </div>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              A practical object-oriented Python application designed for library cataloging, book copy tracking, and inventory circulation. Built using OOP principles with Book and Library classes, it orchestrates check-out and return operations while maintaining two-way synchronization with a formatted Excel database via OpenPyXL.
+            </p>
+
+            <!-- Capabilities List from Source Code -->
+            <div class="space-y-1.5 text-xs text-slate-300">
+              <div class="text-[11px] uppercase tracking-wider font-mono font-semibold text-slate-400">Engineering Highlights:</div>
+              <ul class="space-y-1.5 text-slate-300">
+                <li class="flex items-start space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 text-xs mt-0.5"></i>
+                  <span><strong>Book &amp; Library Classes:</strong> Clean OOP domain architecture and modular design</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 text-xs mt-0.5"></i>
+                  <span><strong>Dynamic Copy Tracking:</strong> Real-time available and issued counts via class properties</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 text-xs mt-0.5"></i>
+                  <span><strong>Input Validation:</strong> Duplicate ID rejection, boundary checks, and safe type conversion</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i class="fa-solid fa-check text-emerald-400 text-xs mt-0.5"></i>
+                  <span><strong>Excel Storage:</strong> Synchronized persistence to Library_Data.xlsx with auto-filters</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Terminal Demonstration -->
+            <div class="rounded-lg bg-slate-950 border border-slate-800 p-3 font-mono text-xs text-slate-300 space-y-1 overflow-x-auto">
+              <div class="text-slate-500 text-[11px] pb-1 border-b border-slate-800 flex justify-between">
+                <span>p2_library_Management_system.py</span>
+                <span class="text-emerald-400">&bull; VERIFIED</span>
+              </div>
+              <div class="text-slate-400">&gt; Option: 4 (Issue Book)</div>
+              <div class="text-slate-300 pl-2">Book 'Python Data Science' issued successfully.</div>
+              <div class="text-emerald-400 pl-2">Available Copies: 4 | Issued Copies: 1</div>
+              <div class="text-[10px] text-slate-500 pt-1 border-t border-slate-800/80">Synchronized with Library_Data.xlsx</div>
+            </div>
+
+          </div>
+
+          <!-- Card Footer -->
+          <div class="pt-5 mt-5 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-slate-500">Output: Library_Data.xlsx</span>
+            <a href="https://github.com/Riyas-m-n/p2_library_Management_system" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 text-xs font-mono text-slate-400 hover:text-white px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors">
+              <i class="fa-brands fa-github text-sm"></i>
+              <span>View on GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ======================================================== -->
+        <!-- PROJECT 3: NOVA VOICE ASSISTANT                          -->
+        <!-- ======================================================== -->
+        <div class="rounded-xl bg-slate-900/80 border border-slate-800 p-6 hover:border-slate-700/80 transition-all flex flex-col justify-between shadow-xl">
+          <div class="space-y-4">
+            
+            <div class="flex items-center justify-between">
+              <span class="inline-flex items-center space-x-2 px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/30">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                </span>
+                <span>SUPPORTING PROJECT</span>
+              </span>
+              <span class="text-xs font-mono text-slate-400">Level 4 Architecture</span>
+            </div>
+
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight">
+                NOVA &ndash; Windows Voice &amp; Automation Assistant
+              </h3>
+              <p class="text-xs font-mono text-sky-400 mt-1">
+                Python &bull; Automation &bull; System Integration &bull; Windows
+              </p>
+            </div>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              A modular Python desktop automation assistant engineered for local Windows system interaction, speech processing, hardware diagnostics, and environmental control. Serves as a supporting software engineering project demonstrating multi-module architecture, OS integration, and defensive programming.
+            </p>
+
+            <!-- NOVA EVOLUTION TIMELINE / RIBBON -->
+            <div class="p-3.5 rounded-lg bg-slate-950/80 border border-slate-800">
+              <div class="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-2 font-semibold flex items-center justify-between">
+                <span class="flex items-center space-x-1.5">
+                  <i class="fa-solid fa-code-branch text-sky-400 text-[10px]"></i>
+                  <span>Architecture Progression</span>
+                </span>
+                <span class="text-amber-400 text-[10px] font-medium">9 Dedicated Modules</span>
+              </div>
+
+              <!-- Horizontal Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-xs">
+                <div class="p-2 rounded bg-slate-900 border border-slate-800">
+                  <div class="text-[10px] text-slate-500 font-bold uppercase">LEVEL 1</div>
+                  <div class="text-slate-300 text-[11px] font-sans mt-0.5">CLI Voice</div>
+                </div>
+                <div class="p-2 rounded bg-slate-900 border border-slate-800">
+                  <div class="text-[10px] text-slate-500 font-bold uppercase">LEVEL 2</div>
+                  <div class="text-slate-300 text-[11px] font-sans mt-0.5">Hardware I/O</div>
+                </div>
+                <div class="p-2 rounded bg-slate-900 border border-slate-800">
+                  <div class="text-[10px] text-sky-400 font-bold uppercase">LEVEL 3</div>
+                  <div class="text-slate-300 text-[11px] font-sans mt-0.5">Intent Router</div>
+                </div>
+                <div class="p-2 rounded bg-slate-900 border border-amber-500/40">
+                  <div class="text-[10px] text-amber-400 font-bold uppercase">LEVEL 4</div>
+                  <div class="text-white text-[11px] font-sans mt-0.5">Modular Engine</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Capabilities List from Source Code -->
+            <div class="space-y-1.5 text-xs text-slate-300">
+              <div class="text-[11px] uppercase tracking-wider font-mono font-semibold text-slate-400">Key Engineering Features:</div>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-slate-300">
+                <li class="flex items-center space-x-1.5">
+                  <i class="fa-solid fa-angle-right text-sky-400 text-[10px]"></i>
+                  <span>Speech-to-text &amp; Text-to-speech</span>
+                </li>
+                <li class="flex items-center space-x-1.5">
+                  <i class="fa-solid fa-angle-right text-sky-400 text-[10px]"></i>
+                  <span>Context-aware intent detection</span>
+                </li>
+                <li class="flex items-center space-x-1.5">
+                  <i class="fa-solid fa-angle-right text-sky-400 text-[10px]"></i>
+                  <span>Fuzzy spelling corrector (difflib)</span>
+                </li>
+                <li class="flex items-center space-x-1.5">
+                  <i class="fa-solid fa-angle-right text-sky-400 text-[10px]"></i>
+                  <span>Volume &amp; brightness control</span>
+                </li>
+                <li class="flex items-center space-x-1.5">
+                  <i class="fa-solid fa-angle-right text-sky-400 text-[10px]"></i>
+                  <span>CPU, RAM &amp; battery metrics</span>
+                </li>
+                <li class="flex items-center space-x-1.5">
+                  <i class="fa-solid fa-angle-right text-sky-400 text-[10px]"></i>
+                  <span>AST-based safe math evaluator</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Card Footer -->
+          <div class="pt-5 mt-5 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-slate-500">Tier: Iterative Architecture</span>
+            <a href="https://github.com/Riyas-m-n/p3_nova_voice_assistant" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 text-xs font-mono text-slate-400 hover:text-white px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors">
+              <i class="fa-brands fa-github text-sm"></i>
+              <span>View on GitHub</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SKILLS SECTION                                               -->
+  <!-- ============================================================ -->
+  <section id="skills" class="py-16 md:py-24 border-b border-slate-900 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="space-y-2 mb-12">
+        <div class="inline-flex items-center space-x-2 text-xs font-mono text-sky-400 tracking-wider uppercase">
+          <i class="fa-solid fa-code text-[10px]"></i>
+          <span>Practical Capabilities</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          TECHNICAL SKILLS
+        </h2>
+        <p class="text-slate-400 text-sm max-w-2xl">
+          Core technical competencies and tools applied directly in my analytical training, data extraction pipelines, and Python projects.
+        </p>
+      </div>
+
+      <!-- Skills Grid (5 Accurate Categories) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Category 1: Programming -->
+        <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-8 h-8 rounded-md bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400">
+              <i class="fa-solid fa-code text-sm"></i>
+            </div>
+            <h3 class="text-sm font-bold uppercase tracking-wider font-mono text-slate-200">
+              Programming
+            </h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded bg-slate-800/80 text-slate-200 text-xs font-mono border border-slate-700 hover:border-sky-500/40 transition-colors">
+              Python
+            </span>
+            <span class="px-3 py-1 rounded bg-slate-800/80 text-slate-200 text-xs font-mono border border-slate-700 hover:border-sky-500/40 transition-colors">
+              SQL
+            </span>
+          </div>
+          <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+            Core programming and querying languages utilized for relational data manipulation, table joins, data extraction, and automation.
+          </p>
+        </div>
+
+        <!-- Category 2: Data & Analytics -->
+        <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all lg:col-span-2">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-8 h-8 rounded-md bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+              <i class="fa-solid fa-chart-pie text-sm"></i>
+            </div>
+            <h3 class="text-sm font-bold uppercase tracking-wider font-mono text-slate-200">
+              Data &amp; Analytics
+            </h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded bg-slate-800/80 text-slate-200 text-xs font-mono border border-slate-700 hover:border-emerald-500/40 transition-colors">
+              MS Excel
+            </span>
+            <span class="px-3 py-1 rounded bg-slate-800/80 text-slate-200 text-xs font-mono border border-slate-700 hover:border-emerald-500/40 transition-colors">
+              Power BI
+            </span>
+            <span class="px-3 py-1 rounded bg-slate-800/80 text-slate-200 text-xs font-mono border border-slate-700 hover:border-emerald-500/40 transition-colors">
+              Pandas
+            </span>
+            <span class="px-3 py-1 rounded bg-slate-800/80 text-slate-200 text-xs font-mono border border-slate-700 hover:border-emerald-500/40 transition-colors">
+              Data Cleaning
+            </span>
+            <span class="px-3 py-1 rounded bg-slate-800/80 text-slate-200 text-xs font-mono border border-slate-700 hover:border-emerald-500/40 transition-colors">
+              Data Processing
+            </span>
+          </div>
+          <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+            Data cleaning, tabular transformation with Pandas, relational SQL data manipulation, automated Excel spreadsheet reporting, and dashboard visualization in Power BI.
+          </p>
+        </div>
+
+        <!-- Category 3: Web Data Collection -->
+        <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-8 h-8 rounded-md bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+              <i class="fa-solid fa-cloud-arrow-down text-sm"></i>
+            </div>
+            <h3 class="text-sm font-bold uppercase tracking-wider font-mono text-slate-200">
+              Web Data Collection
+            </h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded bg-slate-800/80 text-slate-200 text-xs font-mono border border-slate-700 hover:border-indigo-500/40 transition-colors">
+              Web Scraping
+            </span>
+            <span class="px-3 py-1 rounded bg-slate-800/80 text-slate-200 text-xs font-mono border border-slate-700 hover:border-indigo-500/40 transition-colors">
+              Requests
+            </span>
+            <span class="px-3 py-1 rounded bg-slate-800/80 text-slate-200 text-xs font-mono border border-slate-700 hover:border-indigo-500/40 transition-colors">
+              BeautifulSoup
+            </span>
+          </div>
+          <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+            Multi-page web scraping, rate-aware HTTP request handling, HTML DOM parsing, and automated data collection workflows.
+          </p>
+        </div>
+
+        <!-- Category 4: Automation & Systems -->
+        <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-8 h-8 rounded-md bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+              <i class="fa-solid fa-sliders text-sm"></i>
+            </div>
+            <h3 class="text-sm font-bold uppercase tracking-wider font-mono text-slate-200">
+              Automation &amp; Systems
+            </h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded bg-slate-800/80 text-slate-200 text-xs font-mono border border-slate-700 hover:border-amber-500/40 transition-colors">
+              OpenPyXL
+            </span>
+            <span class="px-3 py-1 rounded bg-slate-800/80 text-slate-200 text-xs font-mono border border-slate-700 hover:border-amber-500/40 transition-colors">
+              Excel Automation
+            </span>
+            <span class="px-3 py-1 rounded bg-slate-800/80 text-slate-200 text-xs font-mono border border-slate-700 hover:border-amber-500/40 transition-colors">
+              Python Automation
+            </span>
+          </div>
+          <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+            Automating Excel spreadsheet generation, cell styling, data synchronization, and repetitive local workflow tasks.
+          </p>
+        </div>
+
+        <!-- Category 5: Programming Concepts -->
+        <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-8 h-8 rounded-md bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400">
+              <i class="fa-solid fa-cubes text-sm"></i>
+            </div>
+            <h3 class="text-sm font-bold uppercase tracking-wider font-mono text-slate-200">
+              Programming Concepts
+            </h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded bg-slate-800/80 text-slate-200 text-xs font-mono border border-slate-700 hover:border-rose-500/40 transition-colors">
+              Object-Oriented Programming
+            </span>
+            <span class="px-3 py-1 rounded bg-slate-800/80 text-slate-200 text-xs font-mono border border-slate-700 hover:border-rose-500/40 transition-colors">
+              Modular Programming
+            </span>
+          </div>
+          <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+            Structuring scalable, maintainable software using class domain models, encapsulated properties, and clean modular component design.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- DEVELOPMENT JOURNEY SECTION                                  -->
+  <!-- ============================================================ -->
+  <section id="journey" class="py-16 md:py-24 border-b border-slate-900 bg-slate-950 bg-grid-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="space-y-2 mb-12">
+        <div class="inline-flex items-center space-x-2 text-xs font-mono text-emerald-400 tracking-wider uppercase">
+          <i class="fa-solid fa-route text-[10px]"></i>
+          <span>Skill Progression</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          DEVELOPMENT JOURNEY
+        </h2>
+        <p class="text-slate-400 text-sm max-w-2xl">
+          How my learning process translates core business education and Python foundations into applied data analysis, automated pipelines, and practical solutions.
+        </p>
+      </div>
+
+      <!-- Roadmap Flow Cards (Reflecting Genuine Milestones) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Step 1: Academic Foundation -->
+        <div class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 relative flex flex-col justify-between hover:border-slate-700 transition-all shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[11px] font-mono text-sky-400 font-bold">01. ACADEMIC FOUNDATION</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-sky-500/10 text-sky-300 border border-sky-500/30">2026</span>
+            </div>
+            <h4 class="text-base font-semibold text-white">B.Com Computer Application</h4>
+            <p class="text-xs font-mono text-slate-400 mt-0.5">Al-Ameen College, Edathala</p>
+            <p class="text-slate-300 text-xs mt-3 leading-relaxed">
+              Completed undergraduate degree establishing solid foundations in commerce, business accounting, financial statistics, and computerized software applications.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-slate-800/80 text-slate-500 text-xs font-mono flex items-center justify-between">
+            <span>Completed</span>
+            <i class="fa-solid fa-check text-emerald-400"></i>
+          </div>
+        </div>
+
+        <!-- Step 2: Professional Training -->
+        <div class="p-5 rounded-xl bg-slate-900/80 border border-slate-800 relative flex flex-col justify-between hover:border-slate-700 transition-all shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[11px] font-mono text-amber-400 font-bold">02. PROFESSIONAL TRAINING</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-500/10 text-amber-300 border border-amber-500/30">2026 &ndash; Present</span>
+            </div>
+            <h4 class="text-base font-semibold text-white">Data Analytics Certification</h4>
+            <p class="text-xs font-mono text-slate-400 mt-0.5">SMEC Technologies</p>
+            <p class="text-slate-300 text-xs mt-3 leading-relaxed">
+              Pursuing a Professional Certification in Data Analytics with Prompt Engineering, developing structured competence in SQL querying, Power BI, and Python data handling.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-slate-800/80 text-amber-400 text-xs font-mono flex items-center justify-between font-medium">
+            <span>Currently Pursuing</span>
+            <i class="fa-solid fa-spinner animate-spin text-amber-400 text-[10px]"></i>
+          </div>
+        </div>
+
+        <!-- Step 3: Current Focus & Applied Projects -->
+        <div class="p-5 rounded-xl bg-slate-900/80 border border-sky-500/40 relative flex flex-col justify-between hover:border-sky-500/60 transition-all shadow-lg shadow-sky-500/5">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[11px] font-mono text-sky-300 font-bold">03. ACTIVE FOCUS</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">Active</span>
+            </div>
+            <h4 class="text-base font-semibold text-white">Data Analytics &amp; Practical Projects</h4>
+            <p class="text-xs font-mono text-slate-400 mt-0.5">Python &bull; SQL &bull; Power BI &bull; Excel</p>
+            <p class="text-slate-300 text-xs mt-3 leading-relaxed">
+              Engineering practical data pipelines, ETL web scrapers, structured inventory systems, and analytical reports to turn raw data into clean, actionable business insights.
+            </p>
+          </div>
+          <div class="pt-4 mt-3 border-t border-slate-800/80 text-sky-400 text-xs font-mono flex items-center justify-between font-semibold">
+            <span>Core Analytical Focus</span>
+            <i class="fa-solid fa-compass text-sky-400"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- CONTACT SECTION                                              -->
+  <!-- ============================================================ -->
+  <section id="contact" class="py-16 md:py-24 bg-slate-950">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <!-- Section Header -->
+      <div class="space-y-3 mb-8">
+        <div class="inline-flex items-center space-x-2 text-xs font-mono text-sky-400 tracking-wider uppercase">
+          <i class="fa-regular fa-envelope text-[10px]"></i>
+          <span>Get in Touch</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight uppercase">
+          LET'S CONNECT
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
+          "I am building my career as an Aspiring Data Analyst, combining practical Python development with SQL querying, Power BI reporting, and automated data workflows. Let's connect!"
+        </p>
+      </div>
+
+      <!-- Action Card with Contact Channels -->
+      <div class="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl space-y-6">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          
+          <!-- Location -->
+          <div class="flex flex-col items-center p-5 rounded-xl bg-slate-950/60 border border-slate-800 transition-all">
+            <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-3">
+              <i class="fa-solid fa-location-dot text-lg"></i>
+            </div>
+            <span class="text-sm font-semibold text-white">Location</span>
+            <span class="text-xs text-slate-400 font-mono mt-1 text-center">Kochi, Kerala, India</span>
+          </div>
+
+          <!-- Direct Phone -->
+          <a href="tel:+918086402616" class="flex flex-col items-center p-5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-amber-500/50 hover:bg-slate-900 transition-all group">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:bg-amber-500/20 transition-colors mb-3">
+              <i class="fa-solid fa-phone text-lg"></i>
+            </div>
+            <span class="text-sm font-semibold text-white">Phone</span>
+            <span class="text-xs text-slate-400 font-mono mt-1 group-hover:text-amber-300 transition-colors">+91 8086402616</span>
+          </a>
+
+          <!-- Direct Email -->
+          <a href="mailto:muhammedriyas.m.n.18@gmail.com" class="flex flex-col items-center p-5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-900 transition-all group">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/20 transition-colors mb-3">
+              <i class="fa-regular fa-envelope text-lg"></i>
+            </div>
+            <span class="text-sm font-semibold text-white">Email</span>
+            <span class="text-xs text-slate-400 font-mono mt-1 group-hover:text-emerald-300 transition-colors truncate max-w-full">muhammedriyas.m.n.18</span>
+          </a>
+
+          <!-- LinkedIn Contact -->
+          <a href="https://www.linkedin.com/in/muhammed-riyas-m-n" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-sky-500/50 hover:bg-slate-900 transition-all group">
+            <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 group-hover:bg-sky-500/20 transition-colors mb-3">
+              <i class="fa-brands fa-linkedin text-lg"></i>
+            </div>
+            <span class="text-sm font-semibold text-white">LinkedIn</span>
+            <span class="text-xs text-slate-400 font-mono mt-1 group-hover:text-sky-300 transition-colors">/in/muhammed-riyas-m-n</span>
+          </a>
+
+          <!-- GitHub Profile -->
+          <a href="https://github.com/Riyas-m-n" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-500 hover:bg-slate-900 transition-all group" title="GitHub Profile">
+            <div class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 group-hover:text-white transition-colors mb-3">
+              <i class="fa-brands fa-github text-lg"></i>
+            </div>
+            <span class="text-sm font-semibold text-white">GitHub</span>
+            <span class="text-xs text-slate-400 font-mono mt-1 group-hover:text-white transition-colors">/Riyas-m-n</span>
+          </a>
+
+        </div>
+
+        <div class="pt-4 text-xs font-mono text-slate-500 border-t border-slate-800/80">
+          Open to Data Analyst, Junior Data Analyst, Python/SQL, and Data Processing roles.
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER                                                       -->
+  <!-- ============================================================ -->
+  <footer class="border-t border-slate-900 bg-slate-950/90 py-10 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        
+        <div class="text-center md:text-left space-y-1">
+          <div class="text-white font-semibold tracking-wide text-sm uppercase">
+            MUHAMMED RIYAS M N
+          </div>
+          <div class="text-slate-400">
+            Aspiring Data Analyst &bull; Python <span class="text-sky-400">&bull;</span> SQL <span class="text-sky-400">&bull;</span> Power BI <span class="text-sky-400">&bull;</span> MS Excel
+          </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-slate-400 font-mono">
+          <a href="https://github.com/Riyas-m-n" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors"><i class="fa-brands fa-github mr-1"></i>GitHub</a>
+          <a href="https://www.linkedin.com/in/muhammed-riyas-m-n" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition-colors"><i class="fa-brands fa-linkedin mr-1"></i>LinkedIn</a>
+          <a href="mailto:muhammedriyas.m.n.18@gmail.com" class="hover:text-emerald-400 transition-colors"><i class="fa-regular fa-envelope mr-1"></i>Email</a>
+          <a href="tel:+918086402616" class="hover:text-amber-400 transition-colors"><i class="fa-solid fa-phone mr-1"></i>+91 8086402616</a>
+        </div>
+
+        <div class="text-slate-500 text-center md:text-right font-mono">
+          &copy; 2026 Muhammed Riyas M N
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- CLIENT SCRIPT (Vanilla JS)                                   -->
+  <!-- ============================================================ -->
+  <script>
+    // Mobile Hamburger Menu Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (mobileBtn && mobileMenu && menuIcon) {
+      mobileBtn.addEventListener('click', () => {
+        const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+        mobileBtn.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('hidden');
+        
+        if (!isExpanded) {
+          menuIcon.classList.remove('fa-bars');
+          menuIcon.classList.add('fa-xmark');
+        } else {
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        }
+      });
+
+      // Auto-close menu when a link is clicked
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          mobileBtn.setAttribute('aria-expanded', 'false');
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        });
+      });
+    }
+
+    // Scrollspy to highlight active nav link on scroll
+    const targetSections = ['home', 'about', 'projects', 'skills', 'journey', 'contact'];
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    function updateActiveNav() {
+      const scrollY = window.pageYOffset;
+      let currentSectionId = '';
+
+      targetSections.forEach(id => {
+        const section = document.getElementById(id);
+        if (section) {
+          const sectionTop = section.offsetTop - 140;
+          const sectionHeight = section.offsetHeight;
+          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+            currentSectionId = id;
+          }
+        }
+      });
+
+      // If scrolled down inside education section, keep 'about' highlighted
+      const eduSection = document.getElementById('education');
+      if (eduSection) {
+        const eduTop = eduSection.offsetTop - 140;
+        const eduHeight = eduSection.offsetHeight;
+        if (scrollY >= eduTop && scrollY < eduTop + eduHeight) {
+          currentSectionId = 'about';
+        }
+      }
+
+      if (currentSectionId) {
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === `#${currentSectionId}`) {
+            link.classList.add('text-sky-400', 'bg-slate-900');
+            link.classList.remove('text-slate-300');
+          } else {
+            link.classList.remove('text-sky-400', 'bg-slate-900');
+            link.classList.add('text-slate-300');
+          }
+        });
+      }
+    }
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    window.addEventListener('load', updateActiveNav);
+  </script>
+
+</body>
+</html>
